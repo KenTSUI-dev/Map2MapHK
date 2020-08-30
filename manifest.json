@@ -1,0 +1,42 @@
+{
+    "manifest_version": 2,
+    "name": "Map to Map HK",
+    "version": "0.1.0",
+    "description": "Switch between Google Map, ...",
+    "icons": { 
+        "16": "./images/logo16.png",
+        "48": "./images/logo48.png",
+        "128": "./images/logo128.png" 
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "32": "./images/logo32.png"
+        }
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.google.com/maps/*",
+                "*://*.ozp.tpb.gov.hk/*",
+                "*://*.map.gov.hk/*"
+            ],
+            "run_at": "document_end",
+            "js": [
+                "content_script.js"
+            ]
+        }
+    ],
+    "options_page": "about.html",
+    "web_accessible_resources": ["inject.js"],
+    "permissions": [
+        "tabs"
+     ]
+
+}
+

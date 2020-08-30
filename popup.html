@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Map to Map HK</title>
+    <link href="popup.css" rel="stylesheet">
+    <script src="./lib/thirdparty/jquery-3.5.1.min.js"></script>
+    <script src="./lib/thirdparty/proj4.js"></script>
+    <script src="popup.js"></script>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;">
+        <symbol xmlns:="http://www.w3.org/2000/svg" id="iconInfo" viewBox="0 0 24 24" fill="none" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="iconOpen" viewBox="0 0 24 24" fill="none" fill-rule="evenodd"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8" />
+        </symbol>
+    </svg>
+    <div class="page-popup">
+        <div class="flex menu-buttons">
+            <div class="logo"><img src="./images/logo128.png"></div>
+            <div class="flex-1">Map to Map HK</div>
+            <svg class="icon icon-info" id=info>
+                <use xlink:href="#iconInfo"></use>
+            </svg>
+        </div>
+        <div class="not-support">
+            <p>This site is not supported. See <span id=info2>About</span> for more information.</p>
+        </div>
+    </div>
+</body>
+
+</html>

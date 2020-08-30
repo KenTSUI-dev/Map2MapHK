@@ -1,0 +1,98 @@
+*  {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+}
+
+.page-options {
+    height:100%;
+}
+
+aside {
+    position: relative;
+    z-index: 1000;
+    text-align: center;
+}
+
+.aside-content {
+    height: 100%;
+    width: 12rem;
+    padding: 2rem 1rem 0;
+    border-right: 0.01rem solid #c5c5c5
+}
+
+.aside-content img {
+    width: 5rem;
+
+}
+
+.aside-menu {
+    border-top:  0.01rem solid #9c9c9c;
+    padding: 1rem 0;
+}
+
+.aside-menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #000000
+}
+
+.content {
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    padding: 2.2rem 1.2rem;
+    background-color: #fff;
+}
+
+
+.cols {
+    border-top: 0.01rem solid #9c9c9c;
+    margin: 0 2rem;
+}
+
+.cols-header {
+    border-top:none;
+}
+
+.cols>h1{
+    font-size: 3rem;
+    font-weight:300;
+    margin: 0rem;
+}
+
+.cols>h2{
+    width: 10rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 1.5rem 4rem 1rem 0;
+}
+
+.cols>ul{
+    font-size: 1rem;
+    margin: 1.5rem 4rem 1rem 0;
+}
+
+.cols>ul>p {
+    margin:0;
+}
+
+a {
+    color: #1e8fffee;
+}
+
+.flex {
+    display: flex;
+}

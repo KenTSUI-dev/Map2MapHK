@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 250px;
+    max-width: 100%;
+    overflow: hidden;
+    background: #f7f7f7;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.icon {
+    margin: 0 5px 0 5px;
+    stroke: black;
+    stroke-width: 1.5;
+}
+
+.page-popup {
+    max-height: 600px;
+    overflow: hidden
+}
+
+.logo {
+    text-align: center;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    /* margin: 0 7px */
+}
+
+.logo img {
+    width: 32px
+}
+
+.menu-item {
+    background: #fff;
+    border-top: 1px solid #bbb;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 2rem;
+    padding-left: 14px;
+    padding-right: 14px;
+    white-space: nowrap;
+}
+
+.menu-item,.submenu .menu-item {
+    text-align: left;
+}
+
+.menu-item>.flex-1 {
+    padding-right: 2rem;
+}
+
+.menu-area {
+    cursor: pointer;
+    color: black;
+}
+
+.menu-area:hover {
+    background: #6495ed;
+    color: #fff;
+}
+
+.menu-area:hover .icon-open {
+    stroke: #fff;
+}
+
+.menu-find {
+    padding-left: 0;
+}
+
+
+.menu-find>.icon:first-child {
+    width: 20px;
+    height: 20px;
+}
+
+
+.menu-buttons {
+    align-items: center;
+    padding: 8px 8px 8px 0;
+    background: #fff
+}
+
+.menu-buttons>.menu-area {
+    padding: 8px
+}
+
+.menu-buttons .icon {
+    display: block;
+    width: 20px;
+    height: 20px
+}
+
+.icon-info {
+    cursor: pointer;
+    stroke: rgb(141, 141, 141);
+}
+
+.icon-info:hover {
+    cursor: pointer;
+    stroke: rgb(0, 0, 0);
+}
+
+.not-support {
+    font-size: 1rem;
+    display: none;
+    justify-content: center;
+}
+
+.not-support>p{
+    flex-basis: 15rem;
+    /* padding-left: 1.5rem; */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#info2{
+    text-decoration:solid underline black;
+    cursor: pointer;
+}
