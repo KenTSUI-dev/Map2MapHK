@@ -1,6 +1,9 @@
 $(function () {
   chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
     var url = tabs[0].url;
+    let windowId = tabs[0].windowId;
+    let index = tabs[0].index;
+
     console.log(url);
     if (url.includes("google.com/maps")) {
       from_map = "googlemap";
@@ -66,7 +69,11 @@ $(function () {
 
           var newURL = mapinfo[to_map].url.format(xy[0], xy[1], z);
           // console.log(geo)
-          chrome.tabs.create({ url: newURL });
+          chrome.tabs.create({
+             url: newURL,
+             windowId: windowId,
+             index : index+1,
+            });
         }
       );
     }
