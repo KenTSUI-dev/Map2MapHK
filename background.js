@@ -6,7 +6,8 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
         /google[\w\.]+\/maps/.test(url) ||
         url.includes("ozp.tpb.gov.hk") ||
         url.includes("map.gov.hk") ||
-        url.includes("earth.google.com/web")
+        url.includes("earth.google.com/web") ||
+        url.includes("gish.amo.gov.hk/internet/index.html")
     ) {
         // chrome.browserAction.setPopup({tabId: tabId, popup: '../html/popup.html'});
         chrome.browserAction.setIcon({

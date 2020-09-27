@@ -23,7 +23,8 @@
         {
             "matches": [
                 "*://*.ozp.tpb.gov.hk/*",
-                "*://*.map.gov.hk/*"
+                "*://*.map.gov.hk/*",
+                "*://*.gish.amo.gov.hk/*"
             ],
             "run_at": "document_end",
             "js": [

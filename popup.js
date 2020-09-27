@@ -15,6 +15,8 @@ $(function () {
             from_map = "geoinfomap";
         } else if (url.includes("earth.google.com/web")) {
             from_map = "googleearth";
+        } else if (url.includes('gish.amo.gov.hk/internet/index.html')) {
+            from_map = "gishmap";
         } else {
             document.querySelector(".not-support").style.display = "flex";
             return;
@@ -264,6 +266,18 @@ var mapinfo = {
         z1: 20,
         s0: 288895,
         s1: 564,
+    },
+    gishmap: {
+        name: "GIS on Hong Kong Heritage",
+        url_crs: "EPSG:2326",
+        o30: 0,
+        o31: 10,
+        url:
+            "https://gish.amo.gov.hk/internet/index.html?lang=en-us&m2mX={0}&m2mY={1}&m2mZ={2}",
+        is_zoom: true,
+        xyz: GetXYZ,
+        z0: 0,
+        z1: 10,
     },
     googleearth: {
         name: "Google Earth",
