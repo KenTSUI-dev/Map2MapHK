@@ -3,7 +3,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
     if (url == undefined) {
         return;
     } else if (
-        url.includes("google.com/maps") ||
+        /google[\w\.]+\/maps/.test(url) ||
         url.includes("ozp.tpb.gov.hk") ||
         url.includes("map.gov.hk") ||
         url.includes("earth.google.com/web")

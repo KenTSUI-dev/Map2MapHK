@@ -7,7 +7,7 @@ $(function () {
         let index = tabs[0].index;
 
         console.log(url);
-        if (url.includes("google.com/maps")) {
+        if ((/google[\w\.]+\/maps/.test(url))) {
             from_map = "googlemap";
         } else if (url.includes("ozp.tpb.gov.hk")) {
             from_map = "ozp";
