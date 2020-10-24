@@ -17,6 +17,8 @@ $(function () {
             from_map = "googleearth";
         } else if (url.includes('gish.amo.gov.hk/internet/index.html')) {
             from_map = "gishmap";
+        } else if(url.includes("greening.gov.hk/treeregister/map/treeindex.aspx")){
+            from_map = "treeregister"
         } else {
             document.querySelector(".not-support").style.display = "flex";
             return;
@@ -58,7 +60,7 @@ $(function () {
                     from_map = e.data.from_map;
                     to_map = e.data.to_map;
                     var geo = await mapinfo[from_map].xyz();
-                    var xy = proj4("EPSG:2326", mapinfo[to_map].url_crs, [
+                    var xy = proj4(geo.crs, mapinfo[to_map].url_crs, [
                         geo.o1,
                         geo.o2,
                     ]);
@@ -147,6 +149,9 @@ function GetGoogleMapXYZ() {
                                     Math.log10(mapinfo.googlemap.a0));
                     }
 
+                    //CRS
+                    geo.crs = "EPSG:2326"
+
                     resolve(geo);
                 }
             );
@@ -187,6 +192,9 @@ function GetGoogleEarthXYZ() {
                             (Math.log10(mapinfo.googleearth.d1) -
                                 Math.log10(mapinfo.googleearth.d0));
                     }
+
+                    // CRS
+                    geo.crs = "ESPG:2326"
 
                     resolve(geo);
                 }
@@ -278,6 +286,17 @@ var mapinfo = {
         xyz: GetXYZ,
         z0: 0,
         z1: 10,
+    },
+    treeregister: {
+        name: "Tree Register",
+        url_crs: "EPSG:4326", // CRS used in the url which may not be the same as the map's.
+        o30: 11, // zoom out most while HK is still occupying most of the screen
+        o31: 20, // zoom in most, while tally with the zoom-most level of other map
+        url: "https://www.greening.gov.hk/treeregister/map/treeindex.aspx?lang=en-US&m2mX={1}&m2mY={0}&m2mZ={2}",
+        is_zoom: true,
+        xyz: GetXYZ,
+        z0: 11, // zoom out most while HK is still occupying most of the screen
+        z1: 20, // zoom in most, while tally with the zoom-most level of other map
     },
     googleearth: {
         name: "Google Earth",
