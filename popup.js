@@ -23,6 +23,12 @@ $(function () {
             document.querySelector(".not-support").style.display = "flex";
             return;
         }
+
+        if (mapinfo[from_map]['valid_origin'] === false) {
+            document.querySelector(".not-support").style.display = "flex";
+            return;
+        }
+
         for (var to_map of Object.keys(mapinfo)) {
             if (to_map == from_map) {
                 continue;
@@ -236,6 +242,7 @@ var mapinfo = {
     googlemap: {
         name: "Google Map",
         url_crs: "EPSG:4326", // CRS used in the url which may not be the same as the map's.
+        valid_origin: true, // Is it valid to jump from this map to other maps?
         o30: 11, // zoom out most while HK is still occupying most of the screen
         o31: 20, // zoom in most, while tally with the zoom-most level of other map
         url: "https://www.google.com/maps/@{1},{0},{2}z",
@@ -251,11 +258,12 @@ var mapinfo = {
     ozp: {
         name: "Outline Zoning Plan",
         url_crs: "EPSG:2326",
-        o30: 0,
-        o31: 9,
+        valid_origin: false,
+        o30: 130000,
+        o31: 1128,
         url:
-            "https://www2.ozp.tpb.gov.hk/gos/?x={0}&y={1}&z={2}&b=basemap_0&l=7-1-0-0.7%2C18-1-1-0.0%2C14-1-0-0.7%2C19-1-0-0.7%2C20-1-0-0.7",
-        is_zoom: true,
+            "https://www.ozp.tpb.gov.hk/?x={0}&y={1}&scale={2}&viewType=2d&basemap=ldtm&lang=en&layers=ra_plan-1.dev-1.ozp-1",
+        is_zoom: false,
         xyz: GetXYZ,
         z0: 0,
         z1: 9,
@@ -263,6 +271,7 @@ var mapinfo = {
     geoinfomap: {
         name: "GeoInfo Map",
         url_crs: "EPSG:4326",
+        valid_origin: true,
         o30: 288895,
         o31: 564,
         xyz: GetXYZ,
@@ -276,6 +285,7 @@ var mapinfo = {
     gishmap: {
         name: "GIS on Hong Kong Heritage",
         url_crs: "EPSG:2326",
+        valid_origin: true,
         o30: 0,
         o31: 10,
         url:
@@ -300,6 +310,7 @@ var mapinfo = {
     googleearth: {
         name: "Google Earth",
         url_crs: "EPSG:4326",
+        valid_origin: true,
         o30: 3163840,
         o31: 10000,
         xyz: GetGoogleEarthXYZ,

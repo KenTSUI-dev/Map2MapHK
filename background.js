@@ -7,7 +7,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
         return;
     } else if (
         /google[\w\.]+\/maps/.test(url) ||
-        url.includes("ozp.tpb.gov.hk") ||
+        // url.includes("ozp.tpb.gov.hk") ||
         url.includes("map.gov.hk") ||
         url.includes("earth.google.com/web") ||
         url.includes("gish.amo.gov.hk/internet/index.html")||
