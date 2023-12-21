@@ -15,14 +15,14 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
         url.includes("cedmap.epd.gov.hk")
     ) {
         // chrome.browserAction.setPopup({tabId: tabId, popup: '../html/popup.html'});
-        chrome.browserAction.setIcon({
+        chrome.action.setIcon({
             path: "../images/logo128.png",
             tabId: tabId,
         });
         // console.log('matched');
     } else {
         // chrome.browserAction.setPopup({tabId: tabId, popup: ''});
-        chrome.browserAction.setIcon({
+        chrome.action.setIcon({
             path: "../images/logo128-disabled.png",
             tabId: tabId,
         });
