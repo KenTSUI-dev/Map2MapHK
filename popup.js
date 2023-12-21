@@ -113,10 +113,11 @@ function GetGoogleMapXYZ() {
                 function (tabs) {
                     let url = tabs[0].url;
                     // use `url` here inside the callback because it's asynchronous!
-                    var params = url.split("@")[1].split("/")[0].split(",");
+                    var params = url.match(/@(\d+[.]?\d*),(\d+[.]?\d*),(\d+[.]?\d*)z/);
                     var geo = {
-                        lat: parseFloat(params[0]),
-                        long: parseFloat(params[1]),
+                        lat: parseFloat(params[1]),
+                        long: parseFloat(params[2]),
+                        z: parseFloat(params[3])
                     };
                     var xy = proj4("EPSG:4326", "EPSG:2326", [
                         geo.long,
@@ -124,9 +125,6 @@ function GetGoogleMapXYZ() {
                     ]);
                     geo.o1 = xy[0];
                     geo.o2 = xy[1];
-                    for (var ele of params.slice(2)) {
-                        geo[ele.slice(-1)] = parseFloat(ele.slice(0, -1));
-                    }
 
                     //Standardize z from 0 to 1 linearly
                     if (geo["z"]) {
