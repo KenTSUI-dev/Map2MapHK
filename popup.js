@@ -19,6 +19,8 @@ $(function () {
             from_map = "gishmap";
         } else if(url.includes("treeregister.greening.gov.hk/map/treeIndex.aspx")){
             from_map = "treeregister"
+        } else if(url.includes("cedmap.epd.gov.hk")){
+            from_map = "ced"
         } else {
             document.querySelector(".not-support").style.display = "flex";
             return;
@@ -319,4 +321,17 @@ var mapinfo = {
         d0: 3163840,
         d1: 10000,
     },
+    ced: {
+        name: "CED",
+        url_crs: "EPSG:2326",
+        valid_origin: true,
+        o30: 3.3,
+        o31: 11.3,
+        url:
+            "https://cedmap.epd.gov.hk/en/Map/Share?x={0}&y={1}&z={2}",
+        is_zoom: true,
+        xyz: GetXYZ,
+        z0: 3.3,
+        z1: 11.3,
+    }
 };

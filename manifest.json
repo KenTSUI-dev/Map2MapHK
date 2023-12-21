@@ -26,6 +26,7 @@
                 "*://*.map.gov.hk/*",
                 "*://*.gish.amo.gov.hk/*",
                 "*://*.greening.gov.hk/map/*",
+                "*://*.cedmap.epd.gov.hk/*"
             ],
             "run_at": "document_start",
             "js": [

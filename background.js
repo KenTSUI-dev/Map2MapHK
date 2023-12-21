@@ -12,6 +12,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
         url.includes("earth.google.com/web") ||
         url.includes("gish.amo.gov.hk/internet/index.html")||
         url.includes("treeregister.greening.gov.hk/map/treeIndex.aspx") ||
+        url.includes("cedmap.epd.gov.hk")
     ) {
         // chrome.browserAction.setPopup({tabId: tabId, popup: '../html/popup.html'});
         chrome.browserAction.setIcon({

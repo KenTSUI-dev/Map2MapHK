@@ -29,6 +29,13 @@ try {
                 o2: map.center.lat(),
                 o3: (map.zoom -11)/ (20-11),
                 crs: "EPSG:4326"
+            };
+        } else if(url.includes("cedmap.epd.gov.hk")){
+            var data = {
+                o1: OdenMap.olMap.getView().getCenter()[0],
+                o2: OdenMap.olMap.getView().getCenter()[1],
+                o3: (OdenMap.olMap.getView().getZoom()-3.3 )/8, //Standardize z from 0 to 1 linearly
+                crs: "EPSG:2326"
             }
         } else {
             return;
