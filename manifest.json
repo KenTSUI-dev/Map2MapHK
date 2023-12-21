@@ -25,7 +25,7 @@
                 "*://*.ozp.tpb.gov.hk/*",
                 "*://*.map.gov.hk/*",
                 "*://*.gish.amo.gov.hk/*",
-                "*://*.greening.gov.hk/treeregister/map/*"
+                "*://*.greening.gov.hk/map/*",
             ],
             "run_at": "document_start",
             "js": [

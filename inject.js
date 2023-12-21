@@ -23,7 +23,7 @@ try {
                 o3: map.getLevel() / 10.0, //Standardize z from 0 to 1 linearly
                 crs: "EPSG:2326"
             };
-        } else if(url.includes("greening.gov.hk/treeregister/map/treeindex.aspx")) {
+        } else if(url.includes("treeregister.greening.gov.hk/map/treeIndex.aspx")) {
             var data = {
                 o1: map.center.lng(),
                 o2: map.center.lat(),
@@ -73,7 +73,7 @@ try {
         if (!isNaN(x) & !isNaN(y) & !isNaN(z)) {
             waitForMap();
         }
-    } else if(url.includes("greening.gov.hk/treeregister/map/treeindex.aspx")) {
+    } else if(url.includes("treeregister.greening.gov.hk/map/treeIndex.aspx")) {
         const urlParams = new URLSearchParams(window.location.search);
         const x = parseFloat(urlParams.get("m2mX"));
         const y = parseFloat(urlParams.get("m2mY"));

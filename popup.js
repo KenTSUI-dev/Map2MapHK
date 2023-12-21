@@ -17,7 +17,7 @@ $(function () {
             from_map = "googleearth";
         } else if (url.includes('gish.amo.gov.hk/internet/index.html')) {
             from_map = "gishmap";
-        } else if(url.includes("greening.gov.hk/treeregister/map/treeindex.aspx")){
+        } else if(url.includes("treeregister.greening.gov.hk/map/treeIndex.aspx")){
             from_map = "treeregister"
         } else {
             document.querySelector(".not-support").style.display = "flex";
@@ -289,14 +289,15 @@ var mapinfo = {
     },
     treeregister: {
         name: "Tree Register",
-        url_crs: "EPSG:4326", // CRS used in the url which may not be the same as the map's.
-        o30: 11, // zoom out most while HK is still occupying most of the screen
-        o31: 20, // zoom in most, while tally with the zoom-most level of other map
-        url: "https://www.greening.gov.hk/treeregister/map/treeindex.aspx?lang=en-US&m2mX={1}&m2mY={0}&m2mZ={2}",
+        url_crs: "EPSG:4326",
+        valid_origin: true,
+        o30: 11,
+        o31: 20,
+        url: "https://treeregister.greening.gov.hk/map/treeIndex.aspx?lang=en-US&m2mX={1}&m2mY={0}&m2mZ={2}",
         is_zoom: true,
         xyz: GetXYZ,
-        z0: 11, // zoom out most while HK is still occupying most of the screen
-        z1: 20, // zoom in most, while tally with the zoom-most level of other map
+        z0: 11,
+        z1: 20,
     },
     googleearth: {
         name: "Google Earth",
